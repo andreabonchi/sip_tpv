@@ -3,11 +3,11 @@
 from __future__ import print_function, absolute_import, division
 from copy import copy
 import astropy.io.fits as fits
-from .pvsiputils import (sym_tpvexprs,
-                         get_sip_keywords,
-                         real_sipexprs,
-                         add_pv_keywords,
-                         remove_sip_keywords)
+from pvsiputils import (sym_tpvexprs,
+                        get_sip_keywords,
+                        real_sipexprs,
+                        add_pv_keywords,
+                        remove_sip_keywords)
 
 # Licensed under a 3-clause BSD style license - see LICENSE.txt
 """
