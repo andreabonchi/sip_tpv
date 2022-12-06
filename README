@@ -1,6 +1,8 @@
 sip_tpv
 =======
 
+Version fixed by Andrea Bonchi
+
 Utilities for converting between the SIP convention for representing distortion
 in FITS images, and the TPV convention.
 

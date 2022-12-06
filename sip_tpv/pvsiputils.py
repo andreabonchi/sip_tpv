@@ -208,9 +208,6 @@ def get_sip_keywords(header):
     ac (numpy.matrix) : the A-coefficients from the FITS header
     bc (numpy.matrix) : the B-coefficients from the FITS header
     """
-    print('input header')
-    print(header)
-
     cd = np.matrix([[header.get('CD1_1', 0.0), header.get('CD1_2', 0.0)],
                     [header.get('CD2_1', 0.0), header.get('CD2_2', 0.0)]], dtype=np.float64)
     a_order = int(header.get('A_ORDER', 0))
@@ -239,8 +236,6 @@ def get_pv_keywords(header):
     pv1 (numpy.array) : the PV1-coefficients from the FITS header
     pv2 (numpy.array) : the PV2-coefficients from the FITS header
     """
-    print('input header')
-    print(header)
 
     cd = np.matrix([[header.get('CD1_1', 0.0), header.get('CD1_2', 0.0)],
                     [header.get('CD2_1', 0.0), header.get('CD2_2', 0.0)]], dtype=np.float64)
@@ -267,13 +262,8 @@ def real_sipexprs(cd, ac, bc):
     sipy (Sympy expr) : equation for y-distortion in SIP convention
     """
 
-    print('------------------------')
-    print('CD matrix ')
-    print(cd)
-    print('------------------------')
-
     x, y = symbols("x y")
-    cdinverse = cd**-1
+    cdinverse = cd**-1  # calculate CD inverse matrix
     uprime, vprime = cdinverse*Matrix([x, y])
     usum = uprime
     vsum = vprime
